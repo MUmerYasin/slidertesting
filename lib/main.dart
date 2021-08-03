@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:slidertesting/appbartesting.dart';
 
 void main() {
   runApp(const MyApp());
+  // runApp(const AppBarTestingC());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+      home: const AppBarTestingC(),
+
     );
   }
 }
@@ -32,6 +37,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   double _currentSliderValue = 20;
+  // int _current = 0;
+  // final CarouselController _controller = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +141,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 ),
 
+
+
                 ),
+                // CarouselSlider.builder(
+                //   itemCount: 100,
+                //   options: CarouselOptions(
+                // aspectRatio: 2.0,
+                // enlargeCenterPage: true,
+                // autoPlay: true,
+                //   ),
+                //   itemBuilder: (ctx, index, realIdx) {
+                // return Text(index.toString());
+                //   },
+                // ),
+              ],
+            ),
+
+            Row(
+              children: const [
+                Divider(),
               ],
             ),
 
