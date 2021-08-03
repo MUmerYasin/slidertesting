@@ -91,9 +91,9 @@ class _AppBarTestingCState extends State<AppBarTestingC> {
             ],
           ),
         ),
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
 
-        // title: const Text('app bar testing'),
+        title: null,
 
 
         actions: <Widget>[
@@ -112,14 +112,16 @@ class _AppBarTestingCState extends State<AppBarTestingC> {
           Flexible (
             fit :FlexFit.loose,
             child: DropdownButton<String>(
+
               value: dropdownValue,
               icon: const Icon(Icons.arrow_downward,color: Colors.white,),
               iconSize: 24,
-              // elevation: 24,
-              style: const TextStyle(color: Colors.white, fontSize: 20.0),
+              elevation: 24,
+              dropdownColor: Colors.deepPurple,
+              style: const TextStyle(color: Colors.white, fontSize: 20.0, backgroundColor: Colors.deepPurple,),
               underline: Container(
                 height: 3,
-                color: Colors.deepPurple,
+                color: Colors.white,
               ),
               onChanged: (String? newValue) {
                 setState(() {
@@ -135,15 +137,17 @@ class _AppBarTestingCState extends State<AppBarTestingC> {
               }).toList(),
             ),
           ),
-          // IconButton(
-          //   icon: const Icon(Icons.view_headline_sharp),
-          //
-          //   onPressed: () {
-          //     Scaffold.of(context).openEndDrawer();
-          //   },
-          // ),
+          Flexible(
+            child: Builder(
+              builder: (context) => IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () => Scaffold.of(context).openEndDrawer(),
+              ),
+            ),
+          ),
         ],
       ),
+
       endDrawer: Drawer(
         elevation: 10.0,
         child: ListView(
@@ -181,7 +185,7 @@ class _AppBarTestingCState extends State<AppBarTestingC> {
 
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: const [
