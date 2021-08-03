@@ -18,8 +18,14 @@ class _AppBarTestingCState extends State<AppBarTestingC> {
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         elevation: 20.0,
-        leadingWidth: 700.0,
-        leading: Form(
+        // centerTitle: true,
+        centerTitle: false,
+        leadingWidth: 800.0,
+        leading:
+
+        Builder(
+        builder: (BuildContext context) {
+          return Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,10 +96,13 @@ class _AppBarTestingCState extends State<AppBarTestingC> {
               ),
             ],
           ),
+        );
+        },
         ),
-        automaticallyImplyLeading: false,
 
-        title: null,
+        // automaticallyImplyLeading: false,
+
+        // title: null,
 
 
         actions: <Widget>[
@@ -184,15 +193,23 @@ class _AppBarTestingCState extends State<AppBarTestingC> {
       ),
 
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: const [
-                Text("data"),
-              ],
-            ),
-          ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(80.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: const [
+                    Text("data"),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
