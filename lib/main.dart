@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:slidertesting/sliverappbartask.dart';
 // import 'package:slidertesting/appbartesting.dart';
 import 'package:slidertesting/sliverappbartesting.dart';
 
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
-      home: const SliverAppBarTestingC(),
+      // home: const SliverAppBarTestingC(),
       // home: const AppBarTestingC(),
+      home: const SliverAppBarTask(),
 
     );
   }
