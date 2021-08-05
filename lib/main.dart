@@ -4,11 +4,33 @@ import 'package:slidertesting/nestedscrolviewtesting.dart';
 // import 'package:slidertesting/sliverappbartask.dart';
 // import 'package:slidertesting/appbartesting.dart';
 // import 'package:slidertesting/sliverappbartesting.dart';
+// import 'package:device_preview/device_preview.dart';
+
+// import 'dart:io';
+
+
+// import 'package:device_preview/plugins.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+
+// import 'package:path_provider/path_provider.dart';
+// import 'package:path/path.dart' as path;
+
+// import 'basic.dart';
+
 
 void main() {
   runApp(const MyApp());
   // runApp(const AppBarTestingC());
 }
+
+// void main() => runApp(
+//   DevicePreview(
+//     enabled: !kReleaseMode,
+//     builder: (context) => const MyApp(), // Wrap your app
+//   ),
+// );
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -17,6 +39,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // locale: DevicePreview.locale(context), // Add the locale here
+      // builder: DevicePreview.appBuilder,
+
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
