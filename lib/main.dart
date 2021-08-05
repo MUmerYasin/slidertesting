@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:slidertesting/sliverappbartask.dart';
+import 'package:slidertesting/nestedscrolviewtesting.dart';
+// import 'package:slidertesting/sliverappbartask.dart';
 // import 'package:slidertesting/appbartesting.dart';
-import 'package:slidertesting/sliverappbartesting.dart';
+// import 'package:slidertesting/sliverappbartesting.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
 
       // home: const SliverAppBarTestingC(),
       // home: const AppBarTestingC(),
-      home: const SliverAppBarTask(),
+      // home: const SliverAppBarTask(),
+      home: const NestedScrolViewTestingC(),
 
     );
   }

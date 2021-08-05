@@ -63,10 +63,13 @@ class _SliverAppBarTaskState extends State<SliverAppBarTask> {
                 itemBuilder: (context, index) {
                   return const SizedBox(
                     width: 300.0,
-                    child: Card(
-                      child: Image(
-                        image: AssetImage(
-                          'assets/imagesall/2.jpg',
+                    child: Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.all(4.0),
+                        child: Image(
+                          image: AssetImage(
+                            'assets/imagesall/2.jpg',
+                          ),
                         ),
                       ),
                     ),
@@ -79,14 +82,19 @@ class _SliverAppBarTaskState extends State<SliverAppBarTask> {
           SliverList(
             delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                return Container(
-                  color: index.isOdd ? Colors.white : Colors.black12,
-                  height: 200.0,
-                  child: const Center(
+                return const SizedBox(
+                  // color: index.isOdd ? Colors.white : Colors.black12,
+                  height: 230.0,
+                  child: Center(
                     // child: Text('$index', textScaleFactor: 2),
-                    child: Image(
-                      image: AssetImage(
-                        'assets/imagesall/1.jpg',
+                    child: Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.all(4.0),
+                        child: Image(
+                          image: AssetImage(
+                            'assets/imagesall/1.jpg',
+                          ),
+                        ),
                       ),
                     ),
 
