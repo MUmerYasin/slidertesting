@@ -1,3 +1,4 @@
+// import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:slidertesting/nestedscrolviewtesting.dart';
@@ -20,6 +21,8 @@ import 'package:flutter/foundation.dart';
 
 
 void main() {
+  // GestureBinding!.instance.resamplingEnabled = true; // Set this flag.
+
   runApp(const MyApp());
   // runApp(const AppBarTestingC());
 }

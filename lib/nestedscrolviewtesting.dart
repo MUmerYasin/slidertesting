@@ -14,6 +14,8 @@ class NestedScrolViewTestingC extends StatefulWidget {
 
 class _NestedScrolViewTestingCState extends State<NestedScrolViewTestingC> {
 
+
+
   final GlobalKey<PopupMenuButtonState<int>> _key = GlobalKey();
 
   // String whatsAppFirstDropDownValue = 'New group';
@@ -59,9 +61,11 @@ class _NestedScrolViewTestingCState extends State<NestedScrolViewTestingC> {
                         color: Colors.white,),
 
                       onPressed: () {
-                        setState(() {
+                        showSearch(context: context, delegate: DataSearch());
 
-                        });
+                        // setState(() {
+                        //
+                        // });
                       },
                     ),
                   ),
@@ -278,7 +282,12 @@ class _NestedScrolViewTestingCState extends State<NestedScrolViewTestingC> {
                 ],
 
                 bottom: const TabBar(
-                    tabs: <Widget> [
+                  // isScrollable: true,
+                  // labelPadding: EdgeInsets.symmetric(horizontal: 10.0),
+                  indicatorColor: Colors.white,
+                  // indicatorSize: TabBarIndicatorSize.label,
+
+                  tabs: <Widget> [
                       Tab(icon: Icon(Icons.camera_alt),),
                       Tab(text: 'CHATS',),
                       Tab(text: 'STATUS',),
@@ -405,31 +414,15 @@ class _NestedScrolViewTestingCState extends State<NestedScrolViewTestingC> {
 
                                   child: SizedBox(
                                     // width: MediaQuery.of(context).size.width,
-                                      child: Image.asset('assets/imagesall/6.jpg')),
+                                      child: Image.asset('assets/imagesall/2.jpg')),
                                   borderRadius: BorderRadius.circular(100.0),
 
                                 ),
                               ),
 
-                              // CircleAvatar(
-                              //   // backgroundImage: const AssetImage("aassets/imagesall/2.jpg",),
-                              //   // radius: 30.0,
-                              //   child: ClipOval(
-                              //     child: Image.asset(
-                              //       'aassets/imagesall/2.jpg',
-                              //     ),
-                              //   ),
-                              //        // Image: Image.asset(
-                              //        //    'assets/dummy.jpg',
-                              //        //    fit: BoxFit.contain,
-                              //        //    matchTextDirection: true,
-                              //        //    height: 50,
-                              //        //  ),
-                              //
-                              // ),
 
-                              title: const Text('M. Umer Yasin', style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
-                              subtitle: const Text('Hi, Welcome to New Flutter app testing.') ,
+                              title: const Text('Muhammad Yasin', style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
+                              subtitle: const Text('Today, 4:12 PM') ,
                             )
                         );
                       },
@@ -443,28 +436,12 @@ class _NestedScrolViewTestingCState extends State<NestedScrolViewTestingC> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-
                   Expanded(
                     child: ListView.builder(
                       shrinkWrap: true,
                       physics: const ClampingScrollPhysics(),
                       itemCount: 60,
                       itemBuilder: (BuildContext context, int index) {
-                        // return Expanded(
-                        //   child: Column(
-                        //     crossAxisAlignment: CrossAxisAlignment.start,
-                        //     children: <Widget>[
-                        //       const Text('Parent'),
-                        //       ListView.builder(
-                        //           itemCount: 2,
-                        //           physics: const ClampingScrollPhysics(),
-                        //           shrinkWrap: true,
-                        //           itemBuilder: (BuildContext context, int index) {
-                        //             return const Text('Child');
-                        //           }),
-                        //     ],
-                        //   ),
-                        // );
                         return SizedBox(
                             height: 50,
                             child: ListTile(
@@ -472,40 +449,27 @@ class _NestedScrolViewTestingCState extends State<NestedScrolViewTestingC> {
                                 backgroundColor: const Color(0xFF075e54),
                                 radius: 20.0,
                                 child: ClipRRect(
-
                                   child: SizedBox(
-                                    // width: MediaQuery.of(context).size.width,
-                                      child: Image.asset('assets/imagesall/6.jpg')),
+                                      // width: MediaQuery.of(context).size.width,
+                                      child: Image.asset(
+                                          'assets/imagesall/3.jpg')),
                                   borderRadius: BorderRadius.circular(100.0),
-
                                 ),
                               ),
-
-                              // CircleAvatar(
-                              //   // backgroundImage: const AssetImage("aassets/imagesall/2.jpg",),
-                              //   // radius: 30.0,
-                              //   child: ClipOval(
-                              //     child: Image.asset(
-                              //       'aassets/imagesall/2.jpg',
-                              //     ),
-                              //   ),
-                              //        // Image: Image.asset(
-                              //        //    'assets/dummy.jpg',
-                              //        //    fit: BoxFit.contain,
-                              //        //    matchTextDirection: true,
-                              //        //    height: 50,
-                              //        //  ),
-                              //
-                              // ),
-
-                              title: const Text('M. Umer Yasin', style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
-                              subtitle: const Text('Hi, Welcome to New Flutter app testing.') ,
+                              title: const Text(
+                                'Ch Abbas',
+                                style: TextStyle(
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              subtitle: const Text(
+                                  'July 28, 11:54 AM'),
+                              trailing: const Icon(Icons.phone, color: Color(0xFF075e54),),
                             )
                         );
                       },
                     ),
                   ),
-
                 ],
               ),
 
@@ -545,5 +509,99 @@ class _NestedScrolViewTestingCState extends State<NestedScrolViewTestingC> {
             childCount: 5,
           ),
         );
+}
+
+
+
+
+
+/// search bar
+///
+
+class DataSearch extends SearchDelegate<String> {
+  final whatsAppSearch = [
+    "Photos",
+    "Videos",
+    "Links",
+    "GIFs",
+    "Audio",
+    "Documents",
+  ];
+
+  final recentWhatsAppSearch = [
+    "Photos",
+    "Videos",
+    "Links",
+    "GIFs",
+    "Audio",
+    "Documents",
+  ];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+          icon: const Icon(Icons.clear),
+          onPressed: () {
+            query = "";
+          })
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+        icon: AnimatedIcon(
+          icon: AnimatedIcons.menu_arrow,
+          progress: transitionAnimation,
+        ),
+        onPressed: () {
+          close(context, "");
+        });
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        height: 100.0,
+        width: 100.0,
+        child: Card(
+          // color: Colors.red,
+          child: Center(
+            child: Text(query),
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final suggestionList = query.isEmpty
+        ? recentWhatsAppSearch
+        : whatsAppSearch.where((p) => p.startsWith(query)).toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) => ListTile(
+        onTap: () {
+          showResults(context);
+        },
+        leading: const Icon(Icons.phone),
+        title: RichText(
+          text: TextSpan(
+              text: suggestionList[index].substring(0, query.length),
+              style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.bold),
+              children: [
+                TextSpan(
+                    text: suggestionList[index].substring(query.length),
+                    style: const TextStyle(color: Colors.grey))
+              ]),
+        ),
+      ),
+      itemCount: suggestionList.length,
+    );
+  }
 }
 
